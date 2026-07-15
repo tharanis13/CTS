@@ -1,0 +1,76 @@
+//Document.java
+public interface Document{
+    void open();
+}
+
+
+//WordDocument.java
+public class WordDocument implements Document{
+    public void open(){
+        System.out.println("Opening Word Document");
+    }
+}
+
+
+//PdfDocument.java
+public class PdfDocument implements Document{
+    public void open(){
+        System.out.println("Opening PDF Document");
+    }
+}
+
+
+//ExcelDocument.java
+public class ExcelDocument implements Document{
+    public void open(){
+        System.out.println("Opening Excel Document");
+    }
+}
+
+
+//DocumentFactory.java
+public abstract class DocumentFactory{
+    public abstract Document createDocument();
+}
+
+
+//WordFactory.java
+public class WordFactory extends DocumentFactory{
+    public Document createDocument(){
+        return new WordDocument();
+    }
+}
+
+
+//PdfFactory.java
+public class PdfFactory extends DocumentFactory{
+    public Document createDocument(){
+        return new PdfDocument();
+    }
+}
+
+
+//ExcelFactory.java
+public class ExcelFactory extends DocumentFactory{
+    public Document createDocument(){
+        return new ExcelDocument();
+    }
+}
+
+
+//FactoryTest.java
+public class FactoryTest{
+    public static void main(String[] args){
+        DocumentFactory wordFactory=new WordFactory();
+        Document word=wordFactory.createDocument();
+        word.open();
+
+        DocumentFactory pdfFactory=new PdfFactory();
+        Document pdf=pdfFactory.createDocument();
+        pdf.open();
+
+        DocumentFactory excelFactory=new ExcelFactory();
+        Document excel=excelFactory.createDocument();
+        excel.open();
+    }
+}
