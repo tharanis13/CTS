@@ -1,0 +1,22 @@
+//FinancialForecast.java
+public class FinancialForecast{
+    static double futureValue(double amount,double rate,int years){
+        if(years==0){
+            return amount;
+        }
+        return futureValue(amount*(1+rate),rate,years-1);
+    }
+
+    public static void main(String[] args){
+        double amount=10000;
+        double rate=0.10;
+        int years=5;
+
+        System.out.println("Future Value: "+futureValue(amount,rate,years));
+    }
+}
+
+
+Analysis:
+Recursive Algorithm Time Complexity: O(n)
+Optimization: Use iteration or dynamic programming (memoization) to avoid unnecessary recursive calls and reduce overhead.
