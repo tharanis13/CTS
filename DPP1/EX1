@@ -1,5 +1,4 @@
 //Logger.java
-
 public class Logger{
     private static Logger instance;
 
@@ -21,9 +20,7 @@ public class Logger{
 
 
 
-
 //SingletonTest.java
-
 public class SingletonTest{
     public static void main(String[] args){
         Logger logger1=Logger.getInstance();
