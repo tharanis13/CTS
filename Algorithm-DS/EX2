@@ -57,3 +57,15 @@ public class SearchDemo{
         System.out.println("Binary Search Index: "+binarySearch(products,102));
     }
 }
+
+Analysis:
+Linear Search Time Complexity
+Best Case: O(1)
+Average Case: O(n)
+Worst Case: O(n)
+Binary Search Time Complexity
+Best Case: O(1)
+Average Case: O(log n)
+Worst Case: O(log n)
+Suitable Algorithm
+Binary Search is more suitable because it is much faster for large, sorted datasets.
