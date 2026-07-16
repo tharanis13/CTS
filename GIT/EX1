@@ -1,0 +1,13 @@
+git --version
+git config --global user.name "tharanis13"
+git config --global user.email "tharanis.23aim@mkongu.edu"
+git config --global --list
+git config --global core.editor "notepad++"
+git config --global -e
+git init
+git status
+git add welcome.txt
+git commit
+git remote add origin https://github.com/tharanis13/CTS
+git pull origin master
+git push origin master
