@@ -1,0 +1,89 @@
+//src/ListofPlayers.js
+function ListofPlayers() {
+  const players = [
+    { name: "Virat", score: 95 },
+    { name: "Rohit", score: 82 },
+    { name: "Gill", score: 68 },
+    { name: "Rahul", score: 75 },
+    { name: "Pant", score: 64 },
+    { name: "Hardik", score: 88 },
+    { name: "Jadeja", score: 72 },
+    { name: "Ashwin", score: 55 },
+    { name: "Bumrah", score: 48 },
+    { name: "Shami", score: 60 },
+    { name: "Siraj", score: 71 }
+  ];
+  const filteredPlayers = players.filter(player => player.score < 70);
+  return (
+    <div>
+      <h2>List of Players</h2>
+
+      {players.map((player, index) => (
+        <p key={index}>
+          {player.name} - {player.score}
+        </p>
+      ))}
+      <h2>Players with Score Below 70</h2>
+      {filteredPlayers.map((player, index) => (
+        <p key={index}>
+          {player.name} - {player.score}
+        </p>
+      ))}
+    </div>
+  );
+}
+export default ListofPlayers;
+
+
+
+
+//src/IndianPlayers.js
+function IndianPlayers() {
+  const players = [
+    "Virat",
+    "Rohit",
+    "Gill",
+    "Rahul",
+    "Pant",
+    "Hardik"
+  ];
+  const [odd1, even1, odd2, even2, odd3, even3] = players;
+  const T20players = ["Virat", "Rohit", "Surya"];
+  const RanjiPlayers = ["Pujara", "Rahane", "Jaiswal"];
+  const mergedPlayers = [...T20players, ...RanjiPlayers];
+  return (
+    <div>
+      <h2>Odd Team Players</h2>
+      <p>{odd1}</p>
+      <p>{odd2}</p>
+      <p>{odd3}</p>
+      <h2>Even Team Players</h2>
+      <p>{even1}</p>
+      <p>{even2}</p>
+      <p>{even3}</p>
+      <h2>Merged Players</h2>
+      {mergedPlayers.map((player, index) => (
+        <p key={index}>{player}</p>
+      ))}
+    </div>
+  );
+}
+export default IndianPlayers;
+
+
+
+
+//src/App.js
+import ListofPlayers from "./ListofPlayers";
+import IndianPlayers from "./IndianPlayers";
+function App() {
+  const flag = true;
+
+  if (flag) {
+    return <ListofPlayers />;
+  } else {
+    return <IndianPlayers />;
+  }
+}
+export default App;
+
